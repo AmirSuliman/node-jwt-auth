@@ -34,12 +34,11 @@
         headers: { 'Content-type': 'application/json' }
       });
       const data = await res.json();
-      console.log("showing this: ",data);
+      console.log(data);
       if(data.errors) {
         emailError.textContent = data.errors.email;
         passwordError.textContent = data.errors.password;
       }
-      console.log(data.user);
       if(data.user){
         location.assign('/');
       }
